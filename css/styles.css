@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(315deg, #fddb92 0%, #d1fdff 74%);
+    font-family: "Sen", sans-serif;
+    font-size: 1.6rem;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, .7);
+}
+
+.form__heading {
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.form__box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form__label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form__input {
+    padding: 14px;
+    border: 2px solid #bbb;
+    border-radius: 5px;
+    font-family: "Sen", sans-serif;
+    font-size: 1.8rem;
+}
+
+.form__error {
+    display: none;
+    margin-top: 5px;
+    color: tomato;
+    font-weight: 500;
+}
+
+.form__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form__button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-family: "Sen", sans-serif;
+    font-size: 2rem;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.form__button--reset {
+    background-color: red;
+}
+
+.form__button--submit {
+    background-color: green;
+}
+
+.form__popup {
+    display: none;
+}

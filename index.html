@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Registration Form</title>
+</head>
+<body>
+  
+  <div class="wrapper">
+    <!-- form -->
+    <form class="form">
+      <!-- form__top -->
+      <h1 class="form__heading">Zarejestruj się!</h1>
+      <!-- form__top -->
+      <!-- form__box -->
+      <div class="form__box">
+        <!-- Input -->
+        <label for="username" class="form__label">Nazwa użytkownika: </label>
+        <input type="text" id="username" class="form__input" placeholder="Wpisz nazwę użytkownika" />
+        <p class="form__error">Komunikat błędu</p>
+        <!-- Input -->
+      </div>
+      <!-- form__box -->
+      <!-- form__box -->
+      <div class="form__box">
+        <!-- Input -->
+        <label for="password" class="form__label">Hasło: </label>
+        <input type="password" id="password" class="form__input" placeholder="Wpisz hasło" />
+        <p class="form__error">Komunikat błędu</p>
+        <!-- Input -->
+      </div>
+      <!-- form__box -->
+      <!-- form__box -->
+      <div class="form__box">
+        <!-- Input -->
+        <label for="password-repeat" class="form__label">Powtórz hasło: </label>
+        <input type="password" id="password-repeat" class="form__input" placeholder="Powtórz hasło" />
+        <p class="form__error">Komunikat błędu</p>
+        <!-- Input -->
+      </div>
+      <!-- form__box -->
+      <!-- form__box -->
+      <div class="form__box">
+        <!-- Input -->
+        <label for="email" class="form__label">Adres e-mail: </label>
+        <input type="email" id="email" class="form__input" placeholder="Wpisz adres e-mail" />
+        <p class="form__error">Komunikat błędu</p>
+        <!-- Input -->
+      </div>
+      <!-- form__box -->
+      <!-- Form__buttons -->
+      <div class="form__buttons">
+        <!-- Button -->
+        <button type="reset" class="form__button form__button--reset">Wyczyść</button>
+        <!-- Button -->
+        <!-- Button -->
+        <button type="submit" class="form__button form__button--submit">Zarejestruj</button>
+        <!-- Button -->
+      </div>
+      <!-- Form__buttons -->
+      <!-- Popup -->
+      <div class="form__popup">
+        <p class="form__popup-text">Formularz został poprawnie wysłany</p>
+        <button type="button" class="form__popup-button">Zamknij</button>
+      </div>
+      <!-- Popup -->
+    </form>
+    <!-- form -->
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
