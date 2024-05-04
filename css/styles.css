@@ -22,7 +22,7 @@ body {
 
 .wrapper {
     width: 90%;
-    max-width: 450px;
+    max-width: 500px;
     padding: 20px;
     border-radius: 10px;
     background-color: #fff;
@@ -52,6 +52,10 @@ body {
     border-radius: 5px;
     font-family: "Sen", sans-serif;
     font-size: 1.8rem;
+}
+
+.error {
+    border: 2px solid tomato;
 }
 
 .form__error {
