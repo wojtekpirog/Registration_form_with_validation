@@ -35,6 +35,14 @@ const handleFormClear = (event) => {
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
+
+  const formFieldsArray = [
+    {fieldName: "username", minLength: 3},
+    {fieldName: "password", minLength: 8},
+    {fieldName: "passwordRepeat", minLenght: 8},
+    {fieldName: "email", minLenght: 8}
+  ];
+  
   checkForm([username, password, passwordRepeat, email]);
   checkLength(username, 3);
   checkLength(password, 8);
