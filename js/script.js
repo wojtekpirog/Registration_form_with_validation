@@ -28,43 +28,53 @@ const addListeners = () => {
 
 const handleFormClear = (event) => {
   event.preventDefault();
-  const formFields = [username, password, passwordRepeat, email];
 
-  formFields.forEach((field) => {field.value = ""});
+  const formFields = [
+    {input: username},
+    {input: password},
+    {input: passwordRepeat},
+    {input: email}
+  ];
+
+  formFields.forEach((field) => {field.input.value = ""});
 }
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
 
-  const formFieldsArray = [
-    {fieldName: "username", minLength: 3},
-    {fieldName: "password", minLength: 8},
-    {fieldName: "passwordRepeat", minLenght: 8},
-    {fieldName: "email", minLenght: 8}
+  const formFields = [
+    {input: username, minLength: 5},
+    {input: password, minLength: 8},
+    {input: passwordRepeat, minLength: 8},
+    {input: email, minLength: 8}
   ];
-  
-  checkForm([username, password, passwordRepeat, email]);
-  checkLength(username, 3);
-  checkLength(password, 8);
-  checkLength(passwordRepeat, 8);
-  checkLength(email, 10);
+
+  checkForm(formFields);
+  formFields.forEach((field) => checkLength(field.input, field.minLength));
+  checkPasswordEquality(password, passwordRepeat);
 }
 
 const checkForm = (formFields) => { 
   formFields.forEach((field) => {
-    if (field.value === "") {
-      showError(field, field.placeholder);
+    if (field.input.value === "") {
+      showError(field.input, field.input.placeholder);
     } else {
-      hideError(field);
+      hideError(field.input);
     }
   });
 }
 
-const checkLength = (field, minLength) => {
-  const label = field.previousElementSibling;
+const checkLength = (input, minLength) => {
+  const label = input.previousElementSibling;
 
-  if (field.value.length < minLength) {
-    showError(field, `${label.textContent} musi zawierać co najmniej ${minLength} znaków.`);
+  if (input.value.length < minLength) {
+    showError(input, `${label.textContent.slice(0, -2)} musi zawierać co najmniej ${minLength} znaków.`);
+  }
+}
+
+const checkPasswordEquality = (password, passwordRepeat) => {
+  if (password.value !== passwordRepeat.value) {
+    showError(passwordRepeat, "Hasła nie są identyczne");
   }
 }
 
