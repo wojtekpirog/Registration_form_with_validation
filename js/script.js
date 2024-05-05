@@ -52,6 +52,7 @@ const handleFormSubmit = (event) => {
   checkForm(formFields);
   formFields.forEach((field) => checkLength(field.input, field.minLength));
   checkPasswordEquality(password, passwordRepeat);
+  checkEmail(email);
 }
 
 const checkForm = (formFields) => { 
@@ -75,6 +76,16 @@ const checkLength = (input, minLength) => {
 const checkPasswordEquality = (password, passwordRepeat) => {
   if (password.value !== passwordRepeat.value) {
     showError(passwordRepeat, "Hasła nie są identyczne");
+  }
+}
+
+const checkEmail = (input) => {
+  const regexp = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+  
+  if (!regexp.test(input.value)) {
+    showError(input, "Niepoprawny adres email");
+  } else {
+    clearError(input);
   }
 }
 
