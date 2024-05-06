@@ -22,11 +22,15 @@ body {
 
 .wrapper {
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
     padding: 20px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, .7);
+}
+
+.form {
+    position: relative;
 }
 
 .form__heading {
@@ -90,5 +94,26 @@ body {
 }
 
 .form__popup {
+    width: 350px;
+    position: absolute;
+    /* top: 50%; */
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #bbb;
+    border-radius: 10px;
+    transition: top 500ms ease-out, display 500ms ease-out;
+}
+
+.form__popup--active {
+    top: 50%;
+    display: flex;
 }
